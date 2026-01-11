@@ -1,6 +1,6 @@
 # Journeys
 
-TODO.
+![Screenshot](./docs/demo.jpeg)
 
 ## Quick Start
 
@@ -43,7 +43,3 @@ Edit `content/site.json` to customize title and description:
 3. Add your images to the folder.
 
 4. Restart to see your new journey!
-
-## Deployment
-
-TODO.
