@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# content journeys
+/content/journeys/*
+!/content/journeys/_example
+
+# generated optimized images
+/public/optimized
+
+# generated manifest
+/src/lib/manifest.json

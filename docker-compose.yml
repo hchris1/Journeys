@@ -1,0 +1,9 @@
+services:
+  portfolio:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./content:/app/content
+      - ./public/optimized:/app/public/optimized
+    restart: unless-stopped
