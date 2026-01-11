@@ -1,5 +1,3 @@
-# Journeys
-
 ![Screenshot](./docs/demo.jpeg)
 
 ## Quick Start
