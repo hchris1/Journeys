@@ -1,7 +1,7 @@
 import { getAllJourneys } from "@/lib/journeys";
 import { getSiteConfig } from "@/lib/site";
 import { JourneyCard } from "@/components/journey-card";
-import { MasonryGrid } from "@/components/masonry-grid";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 export const dynamic = "force-dynamic";
 
@@ -10,30 +10,26 @@ export default function Home() {
   const site = getSiteConfig();
 
   return (
-    <main className="min-h-screen bg-zinc-950">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <header className="mb-12">
-          <h1 className="text-3xl font-light text-white tracking-tight">
+    <main className="min-h-screen bg-black">
+      <div className="max-w-4xl mx-auto px-4 py-16">
+        <header className="mb-20">
+          <h1 className="text-sm font-light text-zinc-500 tracking-widest uppercase">
             {site.title}
           </h1>
-          <p className="mt-2 text-zinc-500">{site.description}</p>
         </header>
 
         {journeys.length === 0 ? (
           <div className="text-center py-20">
-            <p className="text-zinc-500">No journeys yet.</p>
-            <p className="text-zinc-600 text-sm mt-2">
-              Add folders with images to content/journeys/ to get started.
-            </p>
+            <p className="text-zinc-600 text-sm">No journeys yet.</p>
           </div>
         ) : (
-          <MasonryGrid>
-            {journeys.map((journey) => (
-              <div key={journey.slug} className="mb-4">
+          <div className="space-y-32">
+            {journeys.map((journey, index) => (
+              <ScrollReveal key={journey.slug} delay={index * 100}>
                 <JourneyCard journey={journey} />
-              </div>
+              </ScrollReveal>
             ))}
-          </MasonryGrid>
+          </div>
         )}
       </div>
     </main>
